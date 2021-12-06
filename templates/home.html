@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+.myDiv {
+  position:relative;
+  top: 30;
+  width: 520;
+  height: 150;
+  margin: auto;
+  background-color: white;
+  text-align: center;
+  align: center;
+}
+body {
+  background-color:lightpink;
+}
+
+.bDiv{
+    position: relative;
+    top:50;
+    width:520;
+    height: 2130;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="myDiv" align="center" >
+<p><b>Select an emotion:</b></p>
+<form action="/predict" method="POST"  >
+  <input type="radio" id="html" name="emotion" value="happy">
+  <label for="happy"><img src="static/img/happy.jpg" width="50" height="50"></label>
+
+  <input type="radio" id="html" name="emotion" value="sad">
+  <label for="sad"><img src="static/img/sad.jpg" width="50" height="50"></label>
+
+  <input type="radio" id="html" name="emotion" value="angry">
+  <label for="angry"><img src="static/img/angry.jpg" width="50" height="50"></label>
+
+  <input type="radio" id="html" name="emotion" value="disgust">
+  <label for="disgust"><img src="static/img/disgust.png" width="50" height="50"></label>
+
+  <input type="radio" id="html" name="emotion" value="think">
+  <label for="think"><img src="static/img/think.png" width="50" height="50"></label>
+  <br>
+ <input type="submit" value="Submit">
+</form>
+</div>
+<div class="bDiv">
+
+<br>
+{% for data_element in data %}
+    <p>{{data_element}}</p>
+{% endfor %}
+
+</div>
+</body>
+</html>
